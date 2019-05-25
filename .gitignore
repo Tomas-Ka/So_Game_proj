@@ -1,0 +1,5 @@
+#Folders that are to remain untracked:
+
+#files:
+*.bat
+
