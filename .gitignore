@@ -2,4 +2,5 @@
 
 #files:
 *.bat
-
+!Git_stuff.bat
+null
