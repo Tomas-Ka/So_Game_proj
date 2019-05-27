@@ -7,12 +7,13 @@ echo.
 echo.
 echo.
 echo do you want to get updated git data or save and upload?
-set /p var="u for update, s for save and upload: "
+set /p var="u for update, s for save and upload and Fix for fixing download: "
 
 if %var% == u goto Update
 if %var% == U goto Update
 if %var% == s goto Save
 if %var% == S goto Save
+if %var% == Fix goto Fix
 
 goto Question
 
@@ -68,6 +69,18 @@ git commit -a -m"%message%"
 echo.
 git push
 echo.
+echo Done, press any button to quit
+pause >null
+del null
+exit
+
+:Fix
+cd..
+rmdir /s "SO Videogame-project-game - Copy"
+xcopy "SO Videogame-project-game" "So Videogame-project-game - Copy" /h /e /i
+cd "SO Videogame-project-game"
+git checkout *
+
 echo Done, press any button to quit
 pause >null
 del null
